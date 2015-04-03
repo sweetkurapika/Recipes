@@ -8,28 +8,13 @@
 </head>
 
 <body>
-  <header class='navbar navbar-fixed-top navbar-default'>
-    <div class='container'>
-      <%= link_to 'Recipes', '', class: 'btn btn-lg btn-success', id: 'logo' %>
-      <div class='nav-item'>
-        <%= link_to 'link1', '', class:'btn btn-default btn-warning'%>
-      </div>
-      <div class='nav-item'>
-        <%= link_to 'link1', '', class:'btn btn-default btn-warning'%>
-      </div>
-      <div class='nav-item'>
-        <%= link_to 'link1', '', class:'btn btn-default btn-warning'%>
-      </div>
-    </div>
-  </header>
-
+  <%= render '/layouts/nav' %>
   <div class='container'>
 
     <%= yield %>
 
-    <div class='footer'>
-      <p>&copy; My_Copyright 2060</p>
-    </div>
+    <%= render '/layouts/footer' %>
+    
   </div>
 
 </body>
