@@ -21,6 +21,16 @@
         <strong>Steps:</strong>
       </p>
       <%= simple_format(@recipe.description) %>
+
+      <div class='pull-right vote'>
+        <%= link_to like_recipe_path(@recipe, like: true), method: :post do %>
+          <i class='glyphicon glyphicon-thumbs-up'><%= @recipe.thumbs_up_total %></i>
+        <% end %>
+        &nbsp|&nbsp
+        <%= link_to like_recipe_path(@recipe, like: false), method: :post do %>
+          <i class='glyphicon glyphicon-thumbs-down'><%= @recipe.thumbs_down_total %></i>
+        <% end %>
+      </div>
     </div>
 
     <%= link_to 'Edit Recipe', edit_recipe_path, class: 'btn btn-success pull-right' %>
