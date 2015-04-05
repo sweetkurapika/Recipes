@@ -24,6 +24,10 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Bootstrap Gems
 gem 'bootstrap-sass', '~> 3.3.4'
 
+# Gems for file(images) uploads
+gem 'carrierwave', '0.10.0'
+gem 'mini_magick', '4.2.0'
+
 # Gems for Production
 group :production do
   gem 'pg'
