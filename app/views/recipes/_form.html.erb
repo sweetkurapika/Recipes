@@ -1,0 +1,18 @@
+<%= render '/shared/errors', obj: @recipe %>
+<div class='row'>
+  <div class='well col-md-8 col-md-offset-2'>
+    <%= form_for @recipe do |f| %>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+
+      <%= f.label :summary %>
+      <%= f.text_field :summary %>
+
+      <%= f.label :description %>
+      <%= f.text_area :description, rows: 10 %>
+
+      <%= f.submit @recipe.new_record? ? 'Create Recipe' : 'Update Recipe', class: 'btn btn-success' %>
+      <%= link_to 'Cancel', @recipe.new_record? ? recipes_path : recipe_path, class: 'btn btn-warning btn-cancel' %>
+    <% end %>
+  </div>
+</div>
