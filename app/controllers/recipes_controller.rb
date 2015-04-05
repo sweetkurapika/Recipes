@@ -8,4 +8,32 @@ class RecipesController < ApplicationController
     @recipe=Recipe.find params[:id]
   end
 
+  def new
+    @recipe=Recipe.new
+  end
+
+  def create
+    #binding.pry
+
+    # Rails forces the use of 'Strong Parameters' where we have to white-list what we pass through POST method
+    # This is done through a private function that permits only what we need from params object
+    @recipe=Recipe.new recipe_params
+    @recipe.chef=Chef.find 1
+
+    if @recipe.save
+      flash[:success] = 'Recipe successfully added to your recipes portfolio..'
+
+      redirect_to recipes_path
+    else
+      render :new
+    end
+  end
+
+
+
+  private
+    def recipe_params
+      params.require(:recipe).permit(:name, :summary, :description)
+    end
+
 end
