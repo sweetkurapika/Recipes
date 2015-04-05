@@ -27,6 +27,7 @@ gem 'bootstrap-sass', '~> 3.3.4'
 # Gems for file(images) uploads
 gem 'carrierwave', '0.10.0'
 gem 'mini_magick', '4.2.0'
+#gem 'paperclip', '~> 4.2.1'
 
 # Gems for Production
 group :production do

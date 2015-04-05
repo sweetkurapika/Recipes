@@ -13,7 +13,7 @@ class RecipesController < ApplicationController
   end
 
   def create
-    #binding.pry
+    # binding.pry
 
     # Rails forces the use of 'Strong Parameters' where we have to white-list what we pass through POST method
     # This is done through a private function that permits only what we need from params object
