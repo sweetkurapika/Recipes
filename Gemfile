@@ -27,6 +27,11 @@ gem 'bootstrap-sass', '~> 3.3.4'
 # Gems for file(images) uploads
 gem 'carrierwave', '0.10.0'
 gem 'mini_magick', '4.2.0'
+
+# Gem for Pagination
+gem 'will_paginate', '3.0.7'
+gem 'bootstrap-will_paginate', '0.0.10'
+
 #gem 'paperclip', '~> 4.2.1'
 
 # Gems for Production
