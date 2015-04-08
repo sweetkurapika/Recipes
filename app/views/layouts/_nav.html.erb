@@ -1,14 +1,28 @@
 <header class='navbar navbar-fixed-top navbar-default'>
   <div class='container'>
     <%= link_to 'Recipes', home_path, class: 'btn btn-lg btn-success', id: 'logo' %>
+
     <div class='nav-item'>
-      <%= link_to 'Login', '', class:'btn btn-default btn-warning'%>
+      <%= link_to 'Link1', '', class:'btn btn-default btn-warning'%>
     </div>
-    <div class='nav-item'>
-      <%= link_to 'Register', register_path, class:'btn btn-default btn-warning'%>
-    </div>
-    <div class='nav-item'>
-      <%= link_to 'Add Recipe', new_recipe_path, class:'btn btn-default btn-warning'%>
-    </div>
+
+    <% if logged_in? %>
+      <div class='nav-item'>
+        <%= link_to 'Add Recipe', new_recipe_path, class:'btn btn-default btn-warning'%>
+      </div>
+      <div class='nav-item'>
+        <%= link_to 'Logout', logout_path, class:'btn btn-default btn-danger'%>
+      </div>
+
+    <% else %>
+
+      <div class='nav-item'>
+        <%= link_to 'Login', login_path, class:'btn btn-default btn-warning'%>
+      </div>
+      <div class='nav-item'>
+        <%= link_to 'Register', register_path, class:'btn btn-default btn-warning'%>
+      </div>
+    <% end %>
+
   </div>
 </header>

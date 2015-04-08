@@ -30,4 +30,8 @@ Rails.application.routes.draw do
 
   get '/register', to: 'chefs#register'
 
+  get '/login', to: 'auths#login'
+  post '/login', to: 'auths#create'
+  get '/logout', to: 'auths#logout'
+
 end
