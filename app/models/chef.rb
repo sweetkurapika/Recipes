@@ -1,4 +1,5 @@
 class Chef < ActiveRecord::Base
+  has_secure_password
   has_many :recipes, dependent: :destroy
   has_many :likes
   validates :chefname, presence: true, length: {minimum:3, maximum:40}

@@ -24,3 +24,4 @@ class Recipe < ActiveRecord::Base
       end
     end
 end
+~
