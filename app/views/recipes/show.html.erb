@@ -32,8 +32,9 @@
         <% end %>
       </div>
     </div>
-
-    <%= link_to 'Edit Recipe', edit_recipe_path, class: 'btn btn-success pull-right' %>
+    <% if logged_in? && @recipe.chef == current_user %>
+      <%= link_to 'Edit Recipe', edit_recipe_path, class: 'btn btn-success pull-right' %>
+    <% end %>
   </div>
 
 </div>
