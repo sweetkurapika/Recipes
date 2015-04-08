@@ -75,6 +75,7 @@ h2 {
 
 .gravatar {
   border-radius: 10px;
+  margin-top: 15px;
 }
 
 .well {
@@ -114,4 +115,13 @@ div.vote {
 
 ul {
   list-style-type: none;
+}
+
+.nav-tabs > li {
+  float: none;
+  display:inline-block;
+}
+
+.nav-tabs {
+  text-align: center;
 }
