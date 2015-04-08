@@ -1,25 +1,34 @@
-<%= render '/shared/page_title', title: 'All Recipes' %>
+<%= render '/shared/page_title', title: "Welcome chef #{@chef.chefname.capitalize}" %>
 
-<%= will_paginate %>
+<div class='row'>
+
+  <div class='col-md-4 col-md-offset-4 center'>
+    <%= gravatar_for @chef, size: 200 %>
+    <hr/>
+  </div>
+</div>
+
+<div class='row'>
+  <div class='col-md-4 col-md-offset-4 center'>
+    <h3><em>Recipes:</em></h3>
+    <%= will_paginate @recipes %>
+  </div>
+</div>
 
 <% @recipes.each do |recipe| %>
   <div class='row'>
-    <div class='col-md-2'>
-      <section class='chef_info center'>
-        <%= link_to gravatar_for(recipe.chef), chef_path(recipe.chef) %>
-        <h5> <strong>Chef:</strong> <%= recipe.chef.chefname %> </h5>
-      </section>
-    </div>
-
-    <div class='col-lg-6 well'>
-      <h4><%= link_to recipe.name, recipe_path(recipe) %></h4>
+    <div class='col-lg-6 well col-lg-offset-3'>
+      <h4>
+        <%= link_to recipe.name, recipe_path(recipe) %>
+        <%= image_tag recipe.picture.url, size: '230x130', class: 'gravatar pull-right' if recipe.picture? %>
+      </h4>
       <p><%= recipe.summary %></p>
       <p>
         <span class='quiet'><small> Added <%= time_ago_in_words recipe.created_at %> ago,  </small></span>
         <span class='quiet'><small> updated <%= time_ago_in_words recipe.updated_at %> ago. </small></span>
       </p>
 
-      <div class='pull-right'>
+      <div class='pull-left'>
         <%= link_to like_recipe_path(recipe, like: true), method: :post do %>
           <i class='glyphicon glyphicon-thumbs-up'><%= recipe.thumbs_up_total %></i>
         <% end %>
@@ -31,13 +40,8 @@
 
     </div>
 
-    <div class='col-md-4'>
-      <%= link_to (image_tag recipe.picture.url, size: '250x150', class: 'gravatar'), recipe_path(recipe) %>
-    </div>
   </div>
 
   <hr/>
 
 <% end %>
-
-<%= will_paginate %>

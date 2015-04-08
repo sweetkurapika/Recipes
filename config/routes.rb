@@ -28,6 +28,6 @@ Rails.application.routes.draw do
 
   resources :chefs, except: :new
 
-  get '/register', to: 'chefs#new'
+  get '/register', to: 'chefs#register'
 
 end
