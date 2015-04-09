@@ -52,8 +52,13 @@ class ChefsController < ApplicationController
     end
 
     def require_same_user
-      if current_user != @chef
-        flash[:danger]="You can only edit your own profile profile"
+      if !logged_in?
+        flash[:danger]='You must be logged in to perform this action'
+
+        redirect_to login_path
+
+      elsif current_user != @chef
+        flash[:danger]='You can only edit your own profile profile'
 
         redirect_to home_path
       end

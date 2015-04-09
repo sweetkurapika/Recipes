@@ -17,7 +17,7 @@ class ApplicationController < ActionController::Base
     if !logged_in?
       flash[:danger]='You must be logged in to perform this action'
 
-      redirect_to :back
+      redirect_to login_path
     end
   end
 end
