@@ -38,6 +38,7 @@ gem 'bootstrap-will_paginate', '0.0.10'
 group :production do
   gem 'pg'
   gem 'rails_12factor'
+  gem 'fog', '~> 1.29.0'
 end
 
 # Use ActiveModel has_secure_password
