@@ -10,26 +10,3 @@ if Rails.env.production?
     config.fog_directory = ENV['S3_BUCKET']
   end
 end
-
-
-=begin
-{
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Effect": "Allow",
-      "Action": "s3:*",
-      "Resource": [
-        "arn:aws:s3:::[bucket_name]",
-        "arn:aws:s3:::[bucket_name]/*"
-      ]
-    },
-
-    {
-      "Effect": "Allow",
-      "Action": "s3:ListAllMyBuckets",
-      "Resource": "arn:aws:s3:::*"
-    }
-  ]
-}
-=end

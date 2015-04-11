@@ -1,23 +1,39 @@
-     Prefix Verb   URI Pattern                 Controller#Action
-       root GET    /                           pages#home
-       home GET    /home(.:format)             pages#home
-like_recipe POST   /recipes/:id/like(.:format) recipes#like
-    recipes GET    /recipes(.:format)          recipes#index
-            POST   /recipes(.:format)          recipes#create
- new_recipe GET    /recipes/new(.:format)      recipes#new
-edit_recipe GET    /recipes/:id/edit(.:format) recipes#edit
-     recipe GET    /recipes/:id(.:format)      recipes#show
-            PATCH  /recipes/:id(.:format)      recipes#update
-            PUT    /recipes/:id(.:format)      recipes#update
-            DELETE /recipes/:id(.:format)      recipes#destroy
-      chefs GET    /chefs(.:format)            chefs#index
-            POST   /chefs(.:format)            chefs#create
-  edit_chef GET    /chefs/:id/edit(.:format)   chefs#edit
-       chef GET    /chefs/:id(.:format)        chefs#show
-            PATCH  /chefs/:id(.:format)        chefs#update
-            PUT    /chefs/:id(.:format)        chefs#update
-            DELETE /chefs/:id(.:format)        chefs#destroy
-   register GET    /register(.:format)         chefs#register
-      login GET    /login(.:format)            auths#login
-            POST   /login(.:format)            auths#create
-     logout GET    /logout(.:format)           auths#logout
+         Prefix Verb   URI Pattern                     Controller#Action
+           root GET    /                               pages#home
+           home GET    /home(.:format)                 pages#home
+    like_recipe POST   /recipes/:id/like(.:format)     recipes#like
+        recipes GET    /recipes(.:format)              recipes#index
+                POST   /recipes(.:format)              recipes#create
+     new_recipe GET    /recipes/new(.:format)          recipes#new
+    edit_recipe GET    /recipes/:id/edit(.:format)     recipes#edit
+         recipe GET    /recipes/:id(.:format)          recipes#show
+                PATCH  /recipes/:id(.:format)          recipes#update
+                PUT    /recipes/:id(.:format)          recipes#update
+                DELETE /recipes/:id(.:format)          recipes#destroy
+          chefs GET    /chefs(.:format)                chefs#index
+                POST   /chefs(.:format)                chefs#create
+      edit_chef GET    /chefs/:id/edit(.:format)       chefs#edit
+           chef GET    /chefs/:id(.:format)            chefs#show
+                PATCH  /chefs/:id(.:format)            chefs#update
+                PUT    /chefs/:id(.:format)            chefs#update
+                DELETE /chefs/:id(.:format)            chefs#destroy
+       register GET    /register(.:format)             chefs#register
+          login GET    /login(.:format)                auths#login
+                POST   /login(.:format)                auths#create
+         logout GET    /logout(.:format)               auths#logout
+         styles GET    /styles(.:format)               styles#index
+                POST   /styles(.:format)               styles#create
+      new_style GET    /styles/new(.:format)           styles#new
+     edit_style GET    /styles/:id/edit(.:format)      styles#edit
+          style GET    /styles/:id(.:format)           styles#show
+                PATCH  /styles/:id(.:format)           styles#update
+                PUT    /styles/:id(.:format)           styles#update
+                DELETE /styles/:id(.:format)           styles#destroy
+    ingredients GET    /ingredients(.:format)          ingredients#index
+                POST   /ingredients(.:format)          ingredients#create
+ new_ingredient GET    /ingredients/new(.:format)      ingredients#new
+edit_ingredient GET    /ingredients/:id/edit(.:format) ingredients#edit
+     ingredient GET    /ingredients/:id(.:format)      ingredients#show
+                PATCH  /ingredients/:id(.:format)      ingredients#update
+                PUT    /ingredients/:id(.:format)      ingredients#update
+                DELETE /ingredients/:id(.:format)      ingredients#destroy

@@ -34,4 +34,7 @@ Rails.application.routes.draw do
   post '/login', to: 'auths#create'
   get '/logout', to: 'auths#logout'
 
+  resources :styles
+  resources :ingredients
+
 end

@@ -1,4 +1,4 @@
-<%= render '/shared/page_title', title: 'All Recipes' %>
+<%= render '/shared/page_title', title: 'View All Recipes' %>
 
 <ul class='nav nav-tabs'>
   <li class='active col-md-3'>
@@ -25,12 +25,20 @@
     </div>
 
     <div class='col-lg-6 well'>
+
       <h4><%= link_to recipe.name, recipe_path(recipe) %></h4>
+
       <p><%= recipe.summary %></p>
+
       <p>
         <span class='quiet'><small> Added <%= time_ago_in_words recipe.created_at %> ago,  </small></span>
         <span class='quiet'><small> updated <%= time_ago_in_words recipe.updated_at %> ago. </small></span>
       </p>
+
+      <small>Origins</small>
+      <p><%= render recipe.styles %></p>
+      <small>Ingredients</small>
+      <p><%= render recipe.ingredients %></p>
 
       <div class='pull-right'>
         <%= link_to like_recipe_path(recipe, like: true), method: :post do %>

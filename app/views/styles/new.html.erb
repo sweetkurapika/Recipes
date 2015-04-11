@@ -1,0 +1,20 @@
+<%= render '/shared/page_title', title: 'Create a new Style' %>
+
+<%= render '/shared/errors', obj: @style %>
+<div class='row'>
+  <div class='well col-md-8 col-md-offset-2'>
+    <%= form_for @style do |f| %>
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+
+
+        <%= f.submit @style.new_record? ? 'Create Style' : 'Edit Style', class: 'btn btn-success' %>
+        <%= link_to 'Cancel', @style.new_record? ? styles_path : style_path, class: 'btn btn-warning btn-cancel' %>
+
+        <% unless @style.new_record? %>
+            <p class="divider"></p>
+            <%= link_to 'Delete', style_path, :data => {:confirm => 'Are you sure?'}, class: 'btn btn-danger', :method => :delete %>
+        <% end %>
+    <% end %>
+  </div>
+</div>

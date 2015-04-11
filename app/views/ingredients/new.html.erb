@@ -1,0 +1,20 @@
+<%= render '/shared/page_title', title: 'Create a new Ingredient' %>
+
+<%= render '/shared/errors', obj: @ingredient %>
+<div class='row'>
+  <div class='well col-md-8 col-md-offset-2'>
+    <%= form_for @ingredient do |f| %>
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+
+
+        <%= f.submit @ingredient.new_record? ? 'Create Ingredient' : 'Edit Ingredient', class: 'btn btn-success' %>
+        <%= link_to 'Cancel', @ingredient.new_record? ? ingredients_path : ingredient_path, class: 'btn btn-warning btn-cancel' %>
+
+        <% unless @ingredient.new_record? %>
+            <p class="divider"></p>
+            <%= link_to 'Delete', ingredient_path, :data => {:confirm => 'Are you sure?'}, class: 'btn btn-danger', :method => :delete %>
+        <% end %>
+    <% end %>
+  </div>
+</div>
