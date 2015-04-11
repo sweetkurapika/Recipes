@@ -18,6 +18,11 @@
 
       <%= f.submit @recipe.new_record? ? 'Create Recipe' : 'Update Recipe', class: 'btn btn-success' %>
       <%= link_to 'Cancel', @recipe.new_record? ? recipes_path : recipe_path, class: 'btn btn-warning btn-cancel' %>
+
+        <% unless @recipe.new_record? %>
+            <p class="divider"></p>
+            <%= link_to 'Delete', recipe_path, :data => {:confirm => 'Are you sure?'}, class: 'btn btn-danger', :method => :delete %>
+        <% end %>
     <% end %>
   </div>
 </div>

@@ -1,7 +1,7 @@
 class RecipesController < ApplicationController
-  before_action :set_recipe, only: [:edit, :update, :show, :like]
+  before_action :set_recipe, only: [:edit, :update, :destroy, :show, :like]
   before_action :require_user, except: [:show, :index]
-  before_action :require_same_user, only: [:edit, :update]
+  before_action :require_same_user, only: [:edit, :update, :destroy]
 
   def index
     @recipes=Recipe.paginate(page: params[:page], per_page: 3)
@@ -55,6 +55,16 @@ class RecipesController < ApplicationController
     end
 
     redirect_to :back
+  end
+
+  def destroy
+    if @recipe.destroy
+      flash[:success]='Recipe deleted..'
+
+      redirect_to recipes_path
+    else
+      render :edit
+    end
   end
 
 
