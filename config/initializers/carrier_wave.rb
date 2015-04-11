@@ -19,8 +19,8 @@ end
       "Effect": "Allow",
       "Action": "s3:*",
       "Resource": [
-        "arn:aws:s3:::shibaburailsrecipes",
-        "arn:aws:s3:::shibaburailsrecipes/*"
+        "arn:aws:s3:::[bucket_name]",
+        "arn:aws:s3:::[bucket_name]/*"
       ]
     },
 
