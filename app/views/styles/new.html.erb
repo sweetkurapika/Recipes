@@ -1,4 +1,4 @@
-<%= render '/shared/page_title', title: 'Create a new Style' %>
+<%= render '/shared/page_title', title: 'Create a new Origin' %>
 
 <%= render '/shared/errors', obj: @style %>
 <div class='row'>
@@ -8,7 +8,7 @@
         <%= f.text_field :name %>
 
 
-        <%= f.submit @style.new_record? ? 'Create Style' : 'Edit Style', class: 'btn btn-success' %>
+        <%= f.submit @style.new_record? ? 'Create Origin' : 'Edit Origin', class: 'btn btn-success' %>
         <%= link_to 'Cancel', @style.new_record? ? styles_path : style_path, class: 'btn btn-warning btn-cancel' %>
 
         <% unless @style.new_record? %>

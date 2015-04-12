@@ -1,4 +1,4 @@
-<%= render '/shared/page_title', title: "Recipes For : #{@style.name.capitalize} Food" %>
+<%= render '/shared/page_title', title: "Recipes for : #{@ingredient.name.capitalize}" %>
 
 <ul class='nav nav-tabs'>
   <li class='active col-md-3'>
@@ -15,7 +15,7 @@
   </div>
 </div>
 
-<% @style.recipes.each do |recipe| %>
+<% @ingredient.recipes.each do |recipe| %>
     <div class='row'>
       <div class='col-md-2'>
         <section class='chef_info center'>

@@ -1,4 +1,5 @@
 class StylesController < ApplicationController
+  before_action :require_user, except: [:show, :index]
 
   def show
     @style=Style.find params[:id]
@@ -19,6 +20,18 @@ class StylesController < ApplicationController
 
       render :new
     end
+  end
+
+  def edit
+
+  end
+
+  def update
+
+  end
+
+  def destroy
+
   end
 
 

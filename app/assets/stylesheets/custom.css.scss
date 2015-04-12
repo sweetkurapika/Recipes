@@ -9,7 +9,7 @@ $navbar-default-color: $light-orange;
   margin-top: 10px;
   margin-bottom: 10px;
   float: left;
-  margin-right: 10px;
+  margin-right: 15px;
   font-size: 2em;
   color: #fff;
   text-transform: uppercase;
@@ -28,9 +28,16 @@ body {
 }
 
 .nav-item {
-  margin-left: 25px;
+  padding: 0;
+  margin-left: 20px;
   float: left;
-  margin-top: 20px;
+  margin-top: 25px;
+}
+
+.nav-ul-item {
+  padding-left: 25px;
+  float: left;
+  margin-top: 15px;
 }
 
 .center {

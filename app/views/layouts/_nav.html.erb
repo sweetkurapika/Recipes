@@ -2,19 +2,49 @@
   <div class='container'>
     <%= link_to 'Recipes', home_path, class: 'btn btn-lg btn-success', id: 'logo' %>
 
-    <div class='nav-item'>
-      <%= link_to 'Link1', '', class:'btn btn-default btn-warning'%>
-    </div>
+    <ul class='nav-ul-item'>
+      <li class='dropdown'>
+        <%= link_to '#', class: 'btn btn-default btn-danger dropdown-toggle', 'data-toggle' => 'dropdown' do %>
+            Origins <b class='caret'></b>
+        <% end %>
+        <ul class='dropdown-menu'>
+          <% Style.all.each do |style| %>
+            <li> <%= link_to style.name, style_path(style) %> </li>
+          <% end %>
+          <% if logged_in? %>
+              <li class="divider"></li>
+              <li>
+                <%= link_to 'New Origin', new_style_path %>
+              </li>
+          <% end %>
+        </ul>
+      </li>
+    </ul>
 
-    <div class='nav-item'>
-      <%= link_to 'Link2', '', class:'btn btn-default btn-warning'%>
-    </div>
+    <ul class='nav-ul-item'>
+      <li class='dropdown'>
+        <%= link_to '#', class: 'btn btn-default btn-danger dropdown-toggle', 'data-toggle' => 'dropdown' do %>
+            Ingredients <b class='caret'></b>
+        <% end %>
+        <ul class='dropdown-menu'>
+          <% Ingredient.all.each do |ingredient| %>
+              <li> <%= link_to ingredient.name, ingredient_path(ingredient) %> </li>
+          <% end %>
+          <% if logged_in? %>
+            <li class="divider"></li>
+              <li>
+                <%= link_to 'New Ingredient', new_ingredient_path %>
+              </li>
+          <% end %>
+        </ul>
+      </li>
+    </ul>
 
     <% if logged_in? %>
       <div class='nav-item'>
         <%= link_to 'Add Recipe', new_recipe_path, class:'btn btn-default btn-warning'%>
       </div>
-      <ul class='nav-item pull-right'>
+      <ul class='nav-ul-item pull-right'>
         <li class='dropdown'>
           <%= link_to '#', class: 'btn btn-default btn-danger dropdown-toggle', 'data-toggle' => 'dropdown' do %>
             <%= current_user.chefname.capitalize %> <b class='caret'></b>
