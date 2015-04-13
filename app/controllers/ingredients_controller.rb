@@ -16,6 +16,7 @@ class IngredientsController < ApplicationController
 
   def create
     @ingredient=Ingredient.new ingredient_params
+    @ingredient.name.capitalize!
     if @ingredient.save
       flash[:success]='Ingredient successfully created..'
 

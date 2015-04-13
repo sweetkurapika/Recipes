@@ -12,6 +12,7 @@ class StylesController < ApplicationController
 
   def create
     @style=Style.new style_params
+    @style.name.capitalize!
     if @style.save
       flash[:success]='Style successfully created..'
 
