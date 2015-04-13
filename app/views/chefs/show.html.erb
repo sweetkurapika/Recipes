@@ -15,8 +15,11 @@
   </div>
 </div>
 
+<hr/>
+
 <% @recipes.each do |recipe| %>
-  <div class='row'>
+
+    <div class='row'>
     <div class='col-lg-6 well col-lg-offset-3'>
       <h4>
         <%= link_to recipe.name, recipe_path(recipe) %>
@@ -42,6 +45,14 @@
 
   </div>
 
-  <hr/>
-
 <% end %>
+
+<hr/>
+
+<div class='row'>
+  <div class='col-md-4 col-md-offset-4 center'>
+    <%= will_paginate @recipes %>
+  </div>
+</div>
+
+<h5><%= link_to 'Return to All Chefs', chefs_path, class: 'btn btn-warning btn-small' %></h5>

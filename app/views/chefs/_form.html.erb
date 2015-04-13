@@ -12,7 +12,13 @@
       <%= f.password_field :password%>
 
       <%= f.submit @chef.new_record? ? 'Register' : 'Edit Profile', class: 'btn btn-success' %>
-      <%= link_to 'Cancel', home_path, class: 'btn btn-warning btn-cancel' %>
+      <%= link_to 'Cancel', chef_path, class: 'btn btn-warning btn-cancel' %>
+
+      <% if current_user.admin? %>
+        <p class="divider"></p>
+        <%= link_to 'Delete', chef_path, class: 'btn btn-danger btn-cancel', :method => :delete, data: {confirm: "You are about to delete Chef : \n\"#{@chef.chefname}\" \nAre you sure?"} %>
+      <% end %>
+
     <% end %>
   </div>
 </div>

@@ -79,7 +79,7 @@ class RecipesController < ApplicationController
     end
 
     def require_same_user
-      if current_user != @recipe.chef
+      if current_user != @recipe.chef and !current_user.admin?
         flash[:danger]="You can only edit your own recipes"
 
         redirect_to recipes_path
@@ -89,6 +89,10 @@ class RecipesController < ApplicationController
   def require_user_like
     if !logged_in?
       flash[:danger]='You must be logged in to perform this action'
+
+      redirect_to :back
+    elsif current_user.admin?
+      flash[:danger]="An admin is not allowed to vote!"
 
       redirect_to :back
     end
