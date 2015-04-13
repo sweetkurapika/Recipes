@@ -99,3 +99,9 @@ class RecipesController < ApplicationController
   end
 
 end
+
+
+# TODO: Add Recipe commenting (or reviewing) capabilities to Chefs.
+# [1.Migrations to build reviews table. 2.Generate Review Model. 3.Create associations to Recipe and Chef. 4.Add validations and Spec tests.
+# 5.Test associations in console. 6.Build routes for reviews. 7.Create Controller, Actions and add review functionality to Views. 8.Require authentication through before_action.
+# 9.Use pagination for multiple reviews management. 10.Use a Separate git branch.]
