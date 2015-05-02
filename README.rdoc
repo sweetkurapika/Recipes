@@ -1,1 +1,1 @@
-RoR project test, keeping automation at minimum.
+Well Featured Recipes Book in Ruby on Rails.
